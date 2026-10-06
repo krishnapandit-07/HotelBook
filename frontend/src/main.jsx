@@ -1,0 +1,16 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App.jsx';
+import './styles/global.css';
+import './styles/navbar.css';
+import './styles/cards.css';
+import './styles/home.css';
+import './styles/auth.css';
+import './styles/hotels.css';
+import './styles/hotel-details.css';
+import './styles/booking.css';
+import './styles/wishlist.css';
+import './styles/profile.css';
+import './styles/owner.css';
+createRoot(document.getElementById('root')).render(<React.StrictMode><BrowserRouter><App /></BrowserRouter></React.StrictMode>);
