@@ -1,1 +1,37 @@
-import{Router}from'express';import db from'../db/connection.js';import{authenticate}from'../middleware/auth.js';const router=Router();router.use(authenticate);router.get('/me',async(req,res)=>{try{const[rows]=await db.execute('SELECT id,name,email,role,phone FROM users WHERE id=?',[req.user.id]);res.json(rows[0]||{})}catch{res.status(500).json({message:'Could not load profile'})}});router.put('/me',async(req,res)=>{const{name,phone}=req.body;try{await db.execute('UPDATE users SET name=?,phone=? WHERE id=?',[name,phone,req.user.id]);res.json({message:'Profile updated'})}catch{res.status(500).json({message:'Could not update profile'})}});export default router;
+import { Router } from 'express';
+import db from '../db/connection.js';
+import { authenticate } from '../middleware/auth.js';
+
+const router = Router();
+
+router.use(authenticate);
+
+router.get('/me', async (req, res) => {
+    try {
+        const [rows] = await db.execute(
+            'SELECT id,name,email,role,phone FROM users WHERE id=?',
+            [req.user.id]
+        );
+
+        res.json(rows[0] || {});
+    } catch {
+        res.status(500).json({ message: 'Could not load profile' });
+    }
+});
+
+router.put('/me', async (req, res) => {
+    const { name, phone } = req.body;
+
+    try {
+        await db.execute(
+            'UPDATE users SET name=?,phone=? WHERE id=?',
+            [name, phone, req.user.id]
+        );
+
+        res.json({ message: 'Profile updated' });
+    } catch {
+        res.status(500).json({ message: 'Could not update profile' });
+    }
+});
+
+export default router;
