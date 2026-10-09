@@ -1,3 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-export default function RoomCard({room,hotelId}){const roomName=room.name||room.room_type;return <article className="available-room-card">{room.image&&<img src={room.image} alt={roomName}/>}<div className="room-description"><span className="context-label">{typeof room.availability==='boolean'?(room.availability?'Available':'Unavailable'):(room.availability||'Available')}</span><h3>{roomName}</h3><p className="supporting-copy">{room.beds} {room.beds===1?'bed':'beds'} · Up to {room.capacity} guests</p></div><div className="room-booking-action"><p className="nightly-price">₹{Number(room.price).toLocaleString('en-IN')} <span>/ night</span></p><Link className="room-booking-button" to={`/booking/${room.id}?hotel=${hotelId}`}>Book Now</Link></div></article>}
+
+export default function RoomCard({ room, hotelId }) {
+    const roomName = room.name || room.room_type;
+
+    return (
+        <article className="available-room-card">
+            {room.image && (
+                <img src={room.image} alt={roomName} />
+            )}
+
+            <div className="room-description">
+                <span className="context-label">
+                    {typeof room.availability === 'boolean'
+                        ? (room.availability ? 'Available' : 'Unavailable')
+                        : (room.availability || 'Available')}
+                </span>
+
+                <h3>{roomName}</h3>
+
+                <p className="supporting-copy">
+                    {room.beds} {room.beds === 1 ? 'bed' : 'beds'}
+                    {' · '}Up to {room.capacity} guests
+                </p>
+            </div>
+
+            <div className="room-booking-action">
+                <p className="nightly-price">
+                    ₹{Number(room.price).toLocaleString('en-IN')}
+                    {' '}
+                    <span>/ night</span>
+                </p>
+
+                <Link
+                    className="room-booking-button"
+                    to={`/booking/${room.id}?hotel=${hotelId}`}
+                >
+                    Book Now
+                </Link>
+            </div>
+        </article>
+    );
+}

@@ -1,1 +1,83 @@
-.hotel-details-page{padding-top:48px}.hotel-information-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:0 0 24px;border-bottom:1px solid var(--border-color)}.hotel-information-heading h1{font-family:var(--serif);font-size:35px;margin-bottom:4px}.hotel-information-heading .supporting-copy{font-size:12px}.hotel-guest-rating{display:inline-block;margin-left:15px;color:#ffc46b}.hotel-information-layout{display:block;padding-top:12px;max-width:1000px}.hotel-information-section{padding:20px 0 24px;border-bottom:1px solid var(--border-color)}.hotel-information-section h2{font-family:var(--serif);font-size:22px;margin-bottom:12px}.hotel-information-section>p{font-size:12px;color:var(--secondary-text);max-width:800px;line-height:1.8}.hotel-amenity-list{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;color:#D4D8DC;font-size:11px}.hotel-amenity-list span:first-letter{color:var(--primary-color)}.hotel-available-rooms{margin-top:15px}@media(max-width:750px){.hotel-information-heading h1{font-size:29px}.hotel-information-heading{align-items:flex-start;flex-direction:column}.hotel-amenity-list{grid-template-columns:1fr}}
+.hotel-details-page {
+    padding-top: 48px;
+}
+
+.hotel-information-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 0 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hotel-information-heading h1 {
+    font-family: var(--serif);
+    font-size: 35px;
+    margin-bottom: 4px;
+}
+
+.hotel-information-heading .supporting-copy {
+    font-size: 12px;
+}
+
+.hotel-guest-rating {
+    display: inline-block;
+    margin-left: 15px;
+    color: #ffc46b;
+}
+
+.hotel-information-layout {
+    display: block;
+    padding-top: 12px;
+    max-width: 1000px;
+}
+
+.hotel-information-section {
+    padding: 20px 0 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hotel-information-section h2 {
+    font-family: var(--serif);
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.hotel-information-section > p {
+    font-size: 12px;
+    color: var(--secondary-text);
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.hotel-amenity-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+    color: #D4D8DC;
+    font-size: 11px;
+}
+
+.hotel-amenity-list span:first-letter {
+    color: var(--primary-color);
+}
+
+.hotel-available-rooms {
+    margin-top: 15px;
+}
+
+@media (max-width: 750px) {
+    .hotel-information-heading h1 {
+        font-size: 29px;
+    }
+
+    .hotel-information-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hotel-amenity-list {
+        grid-template-columns: 1fr;
+    }
+}
