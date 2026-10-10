@@ -7,7 +7,11 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME || 'hotelbook',
     waitForConnections: true,
     connectionLimit: 10,
-    decimalNumbers: true
+    decimalNumbers: true,
+    port: Number(process.env.DB_PORT || 3306),
+    ssl: process.env.DB_SSL === "true"
+        ? { minVersion: "TLSv1.2" }
+        : undefined,
 });
 
 export default pool;
