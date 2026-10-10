@@ -2,6 +2,9 @@
 
 A responsive React/Vite hotel booking application with an Express and MySQL API.
 
+## Live Website
+[Open HotelBook](https://your-frontend-name.onrender.com)
+
 ## Run the frontend
 
 ```sh
